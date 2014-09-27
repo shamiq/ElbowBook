@@ -10,8 +10,11 @@ import UIKit
 
 class DataViewController: UIViewController {
 
-    @IBOutlet weak var dataLabel: UILabel!
-    var dataObject: AnyObject?
+    @IBOutlet weak var titleLabel: UILabel!
+    var stepTitleObject: AnyObject?
+    
+    @IBOutlet weak var stepLabel: UILabel!
+    var stepDetailObject: AnyObject?
 
 
     override func viewDidLoad() {
@@ -26,11 +29,17 @@ class DataViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let obj: AnyObject = dataObject {
-            self.dataLabel!.text = obj.description
+        if let obj: AnyObject = stepTitleObject {
+            self.titleLabel!.text = obj.description
         } else {
-            self.dataLabel!.text = ""
+            self.titleLabel!.text = ""
         }
+        if let obj: AnyObject = stepDetailObject {
+            self.stepLabel!.text = obj.description
+        } else {
+            self.stepLabel!.text = ""
+        }
+
     }
 
 

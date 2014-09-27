@@ -20,8 +20,11 @@ import UIKit
 
 class ModelController: NSObject, UIPageViewControllerDataSource {
 
-   let pageData:NSArray = ["I'm as proud of what we don't do as I am of what we do - Steve Jobs", "That's one small step for man, one giant leap for mankind - Neil Armstrong","An ant on the move does more than a dozing ox - Lao Tzu","I mean, it's impossible But that's exactly what we've tried to do - Jonathan Ive"]
+//   let stepTitle:NSArray = ["I'm as proud of what we don't do as I am of what we do - Steve Jobs", "That's one small step for man, one giant leap for mankind - Neil Armstrong","An ant on the move does more than a dozing ox - Lao Tzu","I mean, it's impossible But that's exactly what we've tried to do - Jonathan Ive"]
 
+    let stepTitle:NSArray = ["Ingredients & Tools:", "Preheat The Oven", "Prepare Your Baking Sheets", "Mix Dry Ingredients", "Brown the Butter", "Melt Remaining Butter", "Transfer Butter", "Blah"]
+
+    let stepDetail:NSArray = ["flour, sugar, cookie magic", "Preheat the Oven to 375F", "Line your baking sheets with parchment paper or a something", "melt butter in skillet until 2 minutes", "5", "6", "7", "8"]
 
     override init() {
         super.init()
@@ -31,21 +34,22 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 
     func viewControllerAtIndex(index: Int, storyboard: UIStoryboard) -> DataViewController? {
         // Return the data view controller for the given index.
-        if (self.pageData.count == 0) || (index >= self.pageData.count) {
+        if (self.stepTitle.count == 0) || (index >= self.stepTitle.count) {
             return nil
         }
 
         // Create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewControllerWithIdentifier("DataViewController") as DataViewController
-        dataViewController.dataObject = self.pageData[index]
+        dataViewController.stepTitleObject = self.stepTitle[index]
+        dataViewController.stepDetailObject = self.stepDetail[index]
         return dataViewController
     }
 
     func indexOfViewController(viewController: DataViewController) -> Int {
         // Return the index of the given data view controller.
         // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-        if let dataObject: AnyObject = viewController.dataObject {
-            return self.pageData.indexOfObject(dataObject)
+        if let stepTitleObject: AnyObject = viewController.stepTitleObject {
+            return self.stepTitle.indexOfObject(stepTitleObject)
         } else {
             return NSNotFound
         }
@@ -70,7 +74,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         }
         
         index++
-        if index == self.pageData.count {
+        if index == self.stepTitle.count {
             return nil
         }
         return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
