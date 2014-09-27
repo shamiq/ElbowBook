@@ -71,19 +71,11 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
         // In landscape orientation: Set set the spine location to "mid" and the page view controller's view controllers array to contain two view controllers. If the current page is even, set it to contain the current and next view controllers; if it is odd, set the array to contain the previous and current view controllers.
         let currentViewController = self.pageViewController!.viewControllers[0] as DataViewController
-        var viewControllers: NSArray
+        var viewControllers: NSArray = [currentViewController]
 
-        let indexOfCurrentViewController = self.modelController.indexOfViewController(currentViewController)
-        if (indexOfCurrentViewController == 0) || (indexOfCurrentViewController % 2 == 0) {
-            let nextViewController = self.modelController.pageViewController(self.pageViewController!, viewControllerAfterViewController: currentViewController)
-            viewControllers = [currentViewController, nextViewController!]
-        } else {
-            let previousViewController = self.modelController.pageViewController(self.pageViewController!, viewControllerBeforeViewController: currentViewController)
-            viewControllers = [previousViewController!, currentViewController]
-        }
         self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: {done in })
 
-        return .Mid
+        return .Min
     }
 
 
