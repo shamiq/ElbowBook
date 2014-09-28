@@ -20,11 +20,11 @@ import UIKit
 
 class ModelController: NSObject, UIPageViewControllerDataSource {
 
-//   let stepTitle:NSArray = ["I'm as proud of what we don't do as I am of what we do - Steve Jobs", "That's one small step for man, one giant leap for mankind - Neil Armstrong","An ant on the move does more than a dozing ox - Lao Tzu","I mean, it's impossible But that's exactly what we've tried to do - Jonathan Ive"]
-
-    let stepTitle:NSArray = ["Ingredients & Tools:", "Preheat The Oven", "Prepare Your Baking Sheets", "Mix Dry Ingredients", "Brown the Butter", "Melt Remaining Butter", "Transfer Butter", "Blah"]
-
-    let stepDetail:NSArray = ["flour, sugar, cookie magic", "Preheat the Oven to 375F", "Line your baking sheets with parchment paper or a something", "melt butter in skillet until 2 minutes", "5", "6", "7", "8"]
+    let stepTitle:NSArray = ["Shopping List", "Prep: Oven", "Prep: Baking Sheets", "Mix Dry Ingredients", "Brown Butter", "Add More Butter", "Add To Butter", "Mix in Eggs", "Mix!", "Add Flour", "Add Chocolate", "Portion Dough", "Apply to Baking Sheets", "Oven Time!", "Rotate!", "Are We Done Yet?", "Tray Two"]
+    
+    let stepDetail:NSArray = ["Ingredients: \n1 3/4 all-purpose flour \n1/2 tsp baking soda \n14 tbsp unsalted butter \n1/2 cup granulated sugar \n3/4 cup packed dark brown sugar \n1 tsp salt \n2 tsp vanilla extract \n1 egg \n1 egg yolk \n1 1/4 cups chocolate chips", "Preheat your oven to 375F", "Line your baking sheets with parchment paper", "In a bowl (non-heatproof) mix 1 3/4 cups flour and 1/2 tsp baking soda", "In a saucepan over medium-high heat, cook 10 tbsp butter. \nCook until golden, approximately 2 minutes", "Pour the melted butter into the heatproof bowl. \nStir in the remaining 4 tbsp of unmelted butter until melted", "To the butter, add sugar and vanilla, whisk until fully mixed", "Add egg and yolk, and whisk until smooth", "Let sit for 30 seconds, then whisk for a minute", "Mix the flour mixture into the butter mixture until just combined", "Stir in chocolate chips", "Divide the dough into approximately 3 tbsp balls. \n\nYou should have around 16", "Put 8 balls of dough onto each prepared baking sheet", "Put one tray into the oven, bake for 5 minutes", "Rotate the tray in the oven, bake for 5 to 7 minutes more", "Bake until the edges of your cookie are golden brown. \n\nIf they aren't golden brown yet, leave them in for a minute or two longer", "Now bake the second tray and don't forget to rotate halfway through!"]
+    
+    let stepTip:NSArray = ["TIP: It's fine if you have only one baking sheet. Also, almost all ceramic, glass or metal bowls are sufficiently heatproof", "", "TIP: If you have silicon baking sheets such as Silpats, they work great instead of parchment paper", "", "TIP: Be careful not to burn the butter! If it does look black or smell burnt, start with fresh butter", "", "", "", "", "", "TIP: Don't over mix your cookies! The more you mix, the more gluten forms in your cookies, the more gluten, the harder & tougher your finished cookies will be", "", "TIP: Divide the dough into 8 portions. Then take each ball of dough and rip it in half to portion it, no need to reroll it into balls", "TIP: If you chose to try out jagged dough-balls, place them on the pan jagged side up. They bake more evenly this way", "TIP: Rotating makes sure your cookies cook evenly!", "", "", "TIP: Overbaked (but not burnt) cookies are still delicious, try them with some ice cream"]
 
     override init() {
         super.init()
@@ -42,6 +42,8 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         let dataViewController = storyboard.instantiateViewControllerWithIdentifier("DataViewController") as DataViewController
         dataViewController.stepTitleObject = self.stepTitle[index]
         dataViewController.stepDetailObject = self.stepDetail[index]
+        dataViewController.stepTipObject = self.stepTip[index]
+        dataViewController.progressObject = Float(index+1.0)/Float(self.stepTitle.count)
         return dataViewController
     }
 

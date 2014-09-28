@@ -415,6 +415,7 @@
 				54EA733D19D74A490092ADA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		54EA733E19D74A490092ADA2 /* Build configuration list for PBXNativeTarget "The Best Chocolate Chip CookiesTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +424,7 @@
 				54EA734019D74A490092ADA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
