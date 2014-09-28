@@ -21,7 +21,10 @@ class DataViewController: UIViewController {
     
     @IBOutlet weak var progress : UIProgressView!
     var progressObject: AnyObject?
-
+    
+    @IBOutlet weak var stepImage: UIImageView!
+    var imageObject: AnyObject?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -51,15 +54,12 @@ class DataViewController: UIViewController {
         } else {
             self.stepLabel!.text = ""
         }
-
-
         
         //Setting Tip Text
         if let obj: AnyObject = stepTipObject {
             self.tipLabel!.text = obj.description
             self.stepLabel.layer.masksToBounds = true
             self.stepLabel.layer.cornerRadius = 10
-
             
         } else {
             self.tipLabel!.text = ""
@@ -71,6 +71,19 @@ class DataViewController: UIViewController {
         } else {
             self.progress!.progress = 0.0
         }
+
+        let image = UIImage(named: "ovencookies2.png")
+        stepImage.image = image
+        
+        //Setting image
+        if let obj: AnyObject = imageObject{
+          //  self.stepImage.image = image
+            //self.view.addSubview(self.stepImage);
+            //let imageview = UIImageView(image: image)
+           // self.view.addSubview(imageview)
+        } else {
+        }
+        
     }
 
 
