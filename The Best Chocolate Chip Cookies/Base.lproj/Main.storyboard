@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7l9-kI-sDF">
-                                <rect key="frame" x="28" y="110" width="437" height="51"/>
+                                <rect key="frame" x="28" y="110" width="437" height="29"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="437" id="JHo-cF-4xD"/>
@@ -55,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zK6-Zr-toK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zK6-Zr-toK">
                                 <rect key="frame" x="540" y="541" width="408" height="53"/>
                                 <color key="backgroundColor" red="0.85935377040000005" green="0.85935377040000005" blue="0.85935377040000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
@@ -69,9 +69,11 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Day-Js-VfV">
-                                <rect key="frame" x="540" y="110" width="402" height="363"/>
-                                <color key="backgroundColor" red="0.60784316059999999" green="0.60784316059999999" blue="0.60784316059999999" alpha="1" colorSpace="deviceRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Day-Js-VfV">
+                                <rect key="frame" x="540" y="110" width="438" height="360"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="sWR-LR-eQf"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Step Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSl-4O-r46">
                                 <rect key="frame" x="28" y="8" width="926" height="79"/>
@@ -87,16 +89,10 @@
                                     <constraint firstAttribute="width" constant="536" id="6Pd-oy-rjT"/>
                                 </constraints>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Picture goes here. WHY WONT YOU SHOW D:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGh-B3-NY0">
-                                <rect key="frame" x="548" y="218" width="359" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.85935377038043481" green="0.85935377038043481" blue="0.85935377038043481" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="zK6-Zr-toK" firstAttribute="top" secondItem="Day-Js-VfV" secondAttribute="bottom" constant="68" id="6nc-uf-wLX"/>
+                            <constraint firstItem="zK6-Zr-toK" firstAttribute="top" secondItem="Day-Js-VfV" secondAttribute="bottom" constant="71" id="6nc-uf-wLX"/>
                             <constraint firstItem="zK6-Zr-toK" firstAttribute="leading" secondItem="Day-Js-VfV" secondAttribute="leading" id="DuK-Vr-BHb"/>
                             <constraint firstItem="EPS-s9-h4K" firstAttribute="top" secondItem="mS4-2K-tdb" secondAttribute="bottom" constant="28" id="Kcx-1B-edt"/>
                             <constraint firstItem="7l9-kI-sDF" firstAttribute="leading" secondItem="LSl-4O-r46" secondAttribute="leading" id="PJJ-OV-HRc"/>
@@ -105,6 +101,7 @@
                             <constraint firstItem="7l9-kI-sDF" firstAttribute="top" secondItem="Day-Js-VfV" secondAttribute="top" id="cKb-3s-Sxp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zK6-Zr-toK" secondAttribute="trailing" constant="60" id="eiJ-gb-1eB"/>
                             <constraint firstItem="7l9-kI-sDF" firstAttribute="top" secondItem="LSl-4O-r46" secondAttribute="bottom" constant="23" id="fBG-ya-TfY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Day-Js-VfV" secondAttribute="trailing" constant="30" id="s56-GX-hMF"/>
                             <constraint firstItem="7l9-kI-sDF" firstAttribute="top" secondItem="ZwX-cT-FIQ" secondAttribute="top" constant="110" id="xgM-rH-tZf"/>
                             <constraint firstItem="Day-Js-VfV" firstAttribute="leading" secondItem="7l9-kI-sDF" secondAttribute="trailing" constant="75" id="y09-Iy-8nz"/>
                         </constraints>
@@ -121,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784" y="-290"/>
+            <point key="canvasLocation" x="797" y="-358"/>
         </scene>
     </scenes>
 </document>

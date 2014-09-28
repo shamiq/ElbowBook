@@ -72,11 +72,12 @@ class DataViewController: UIViewController {
             self.progress!.progress = 0.0
         }
 
-        let image = UIImage(named: "ovencookies2.png")
-        stepImage.image = image
+        //let image = UIImage(named: "ovencookies2.png")
+        //stepImage.image = image
         
         //Setting image
         if let obj: AnyObject = imageObject{
+            self.stepImage.image = imageObject as UIImage
           //  self.stepImage.image = image
             //self.view.addSubview(self.stepImage);
             //let imageview = UIImageView(image: image)
